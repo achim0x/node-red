@@ -93,7 +93,7 @@ var parseRawRuuvi = function(manufacturerDataString){
   robject.accelerationZ = accelerationZ;
   
   let battery = parseInt(manufacturerDataString.substring(batteryStart, batteryEnd), 16);  // milli-g
-  robject.battery = battery;
+  robject.batteryVoltage = battery/1000;
 
   return robject;
 }
