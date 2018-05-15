@@ -9,7 +9,8 @@ Puts sensor data to msg.payload as JSON, contains: temperature, humidity, pressu
  - Humidity: RH-%
  - Pressure: Pascal
  - Acceleration: milli-G
- - Battery: mV
+ - BatteryVoltage: mV
+ - RSSI: dBm
 
 Currently version 0.0.3, i.e. alpha-quality. All comments and suggestions are welcome, please open pull-requests (and comment that BSD-3 is ok) if you
 want to contribute. Suggestions for improvement can be given as github issues.

@@ -9,7 +9,8 @@ module.exports = function(RED) {
               return null;
             }
             let manufacturerDataString = msg.advertisement.manufacturerData.toString('hex');
-            let ruuviData = parseRuuviData(manufacturerDataString);
+            let rssiString = msg.rssi.toString('hex');
+            let ruuviData = parseRuuviData(manufacturerDataString, rssiString);
             if(!ruuviData){
               return null;
             }
@@ -20,7 +21,7 @@ module.exports = function(RED) {
     RED.nodes.registerType("ruuvitag",RuuviTagNode);
 }
 
-var parseRuuviData = function(manufacturerDataString){
+var parseRuuviData = function(manufacturerDataString, rssiString){
 
   let formatStart = 4;
   let formatEnd   = 6;
@@ -94,6 +95,8 @@ var parseRawRuuvi = function(manufacturerDataString){
   
   let battery = parseInt(manufacturerDataString.substring(batteryStart, batteryEnd), 16);  // milli-g
   robject.batteryVoltage = battery/1000;
+  
+  robject.rssi = rssiString;
 
   return robject;
 }
