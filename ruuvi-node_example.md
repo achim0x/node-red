@@ -2,7 +2,7 @@
 
 ![Example flow](./images/nodered_ruuvinode_flow2.png)
 
-''' json
+``` json
 [{
 		"id": "16282846.0cc62",
 		"type": "inject",
@@ -208,4 +208,4 @@
 		"verifyservercert": true
 	}
 ]
-'''
+```
