@@ -1,5 +1,7 @@
 # Example Node
 
+This Example also uses the influxDB node. Install by: `npm install node-red-contrib-influxdb`
+
 ![Example flow](./images/nodered_ruuvinode_flow2.png)
 
 ``` json
